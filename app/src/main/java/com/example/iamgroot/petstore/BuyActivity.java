@@ -4,7 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -47,22 +47,18 @@ TextView txt;
             @Override
             public void onClick(View view) {
 
-                final AlertDialog.Builder mbuilder= new AlertDialog.Builder(BuyActivity.this);
-
-                mbuilder.setMessage("Order confirmed")
-                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+             
+                        new.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int i) {
                                 dialog.cancel();
-                                Intent intent = new Intent(BuyActivity.this,LoginActivity.class);
+                                Intent intents = new Intent(BuyActivity.this,LoginActivity.class);
                                 finish();
                                 startActivity(intent);
                             }
                         });
                 AlertDialog alertDialog = mbuilder.create();
                 alertDialog.setTitle("");
-                alertDialog.show();
-
             }
         });
 
