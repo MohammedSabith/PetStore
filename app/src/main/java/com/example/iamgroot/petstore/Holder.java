@@ -3,7 +3,7 @@ package com.example.iamgroot.petstore;
 public class Holder {
 
     /*int profileImage;*/
-    int contentImage,buyBtn;
+    int contentImage,buyBtn;   
     private String name, caption;
 
     public Holder(String name, int contentImage, String caption,int buyBtn) {
