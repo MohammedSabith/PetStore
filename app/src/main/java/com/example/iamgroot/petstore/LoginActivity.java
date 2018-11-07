@@ -73,26 +73,12 @@ public class LoginActivity extends AppCompatActivity {
         newUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intents = new Intent(LoginActivity.this, register_user.class);
+                Intent intent = new Intent(LoginActivity.this, register_user.class);
                 startActivity(intents);
             }
         });
 
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                String username = edUsers.getText().toString().trim();
-                String password = edPasswords.getText().toString().trim();
-                if (username.isEmpty()) {
-                    edUsers.setError("please enter name");
-                } else if (password.isEmpty()) {
-                    edPasswords.setError("please enter password");
-                } else {
-                    registerUser1();
-                }
-            }
-        });
+        
     }
 
     private void registerUser1() {
@@ -136,7 +122,7 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(LoginActivity.this, "invlaid credentials", Toast.LENGTH_SHORT).show();
                             e.printStackTrace();
                         }
-                        for (int i = 0; i < detaillist.size(); i++) {
+                        for (int i = 0; i <= detaillist.size(); i++) {
                             name = LoginActivity.detaillist.get(i).getName();
                             email = LoginActivity.detaillist.get(i).getEmail();
                             password = LoginActivity.detaillist.get(i).getPassword();
@@ -159,7 +145,7 @@ public class LoginActivity extends AppCompatActivity {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("username", String.valueOf(edUsers.getText().toString()));
                 params.put("password", String.valueOf(edPasswords.getText().toString()));
-                return params;
+                return true;
             }
 
         };
